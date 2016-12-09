@@ -1,0 +1,24 @@
+<p>Count: {{state}}</p>
+<button on:click='inc()'>+1</button>
+<button on:click='dec()'>-1</button>
+
+<script>
+  export default {
+    data() {
+      return {
+        state: 0,
+        dispatch() {},
+      };
+    },
+
+    methods: {
+      inc() {
+        this.get('dispatch')({ type: 'INC' });
+      },
+
+      dec() {
+        this.get('dispatch')({ type: 'DEC' });
+      },
+    },
+  };
+</script>
